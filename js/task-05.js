@@ -1,10 +1,10 @@
 const input = document.querySelector('#name-input');
 const output = document.querySelector('#name-output');
+const defaultText = output.textContent;
 
-input.addEventListener('input', (event) => {
+input.addEventListener('input', event => {
     output.textContent =
-        event.currentTarget.value.length > 0
+        event.currentTarget.value.trim().length > 0
             ? event.currentTarget.value
-            : 'Anonymous';
+            : defaultText;
 });
-
